@@ -1,0 +1,97 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg);
+  position: relative;
+}
+
+.colorWave {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  bottom: 0;
+  left: 0;
+  mix-blend-mode: color-dodge;
+  z-index: -9;
+  /* opacity: 0.1; */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 350px;
+}
+.container .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.container .header a {
+  color: var(--logo);
+  font-size: 80px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  user-select: none;
+}
+.container .header a img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+.container .header p {
+  color: var(--textColorSoft);
+  text-align: center;
+}
+
+.container .btns {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.container .btns a {
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  background-color: var(--textColor);
+  color: var(--bg);
+  transition: 0.3s ease;
+}
+.container .btns a:hover {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--textColor);
+}
+
+/* Styles for tablets and smaller screens */
+@media only screen and (max-width: 960px) {
+  /* CSS rules for tablets and smaller screens go here */
+
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  /* CSS rules for mobile devices go here */
+  .colorWave {
+    bottom: 100px;
+    left: 0;
+  }
+  .container .header a {
+    font-size: 40px;
+  }
+  .container .header a img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+}

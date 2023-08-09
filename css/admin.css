@@ -1,0 +1,248 @@
+/* ============= NAVBAR ==================== */
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: var(--bg);
+    color: var(--textColor);
+    height: 70px;
+    border-bottom: 1px solid var(--border);
+}
+nav .logo a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: var(--logo);
+    font-size: 20px;
+}
+nav .logo a img{
+    width: 30px;
+    height: 30px;
+}
+nav .userAccount {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+nav .userAccount .accountIcon{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+nav .userAccount>a{
+    background-color: var(--textColorSoft);
+    color: var(--bg);
+    border-radius: 20px;
+    padding: 10px 20px;
+}
+
+/* ============= MAIN ============ */
+main{
+    background-color: var(--bg);
+    min-height: calc(100vh - 70px);
+    padding: 20px 100px;
+    display: flex;
+    gap: 20px;
+}
+
+/* =============== SIDEBAR ============== */
+main .sidebar{
+    width: 250px;
+    height: max-content;
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+}
+main .sidebar ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+main .sidebar ul li{
+    color: var(--textColorSoft);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+main .sidebar ul li:first-child{
+    border-radius: 10px 10px 0 0;
+}
+main .sidebar ul li:last-child{
+    border-radius: 0 0 10px 10px;
+}
+main .sidebar ul li:hover{
+    background-color: rgba(0, 0, 0, 0.1);
+}
+main .sidebar ul li.active{
+    color: var(--textColor);
+    font-weight: bold;
+    background-color: var(--logo);
+    color: var(--textColor);
+}
+main .sidebar ul li a{
+    flex: 1;
+    padding: 20px;
+    text-transform: uppercase;
+    user-select: none;
+}
+
+/* ============= MAIN CONTENT =========== */
+main .mainContent{
+    flex: 1;
+    min-height: 550px;
+    height: max-content;
+    background-color: var(--bgSoft);
+    border-radius: 10px;
+}
+main .mainContent .contentHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid var(--border);
+    color: var(--textColor);
+}
+main .mainContent .contentHeader .headerTitle{
+    font-size: 20px;
+    font-weight: bold;
+}
+main .mainContent .contentHeader .actionBtns{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+main .mainContent .contentHeader .actionBtns>a{
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    background-color: var(--logo);
+}
+
+main .mainContent .allContents{
+    padding: 20px;
+}
+main .mainContent .allContents .searchBox{
+    width: 100%;
+    display: flex;
+    margin-bottom: 20px;
+}
+main .mainContent .allContents .searchBox>input{
+    flex: 1;
+    padding: 10px;
+    background-color: var(--bg);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--textColorSoft);
+}
+main .mainContent .allContents>table{
+    width: 100%;
+    color: var(--textColor);
+    border-collapse: collapse;
+}
+main .mainContent .allContents>table th{
+    text-transform: capitalize;
+}
+main .mainContent .allContents>table th,
+main .mainContent .allContents>table td{
+    border: 1px solid var(--border);
+    padding: 10px;
+    text-align: left;
+}
+main .mainContent .allContents>table td img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+main .mainContent .allContents>table th{
+    background-color: var(--textColorSoft);
+    color: var(--bgSoft);
+}
+main .mainContent .allContents>table tr:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ============= CARDS ============== */
+main .mainContent .allContents .cards{
+    margin: 10px;
+    width: 200px;
+    background-color: #b1b1b1;
+    border-radius: 10px;
+    display: inline-flex;
+    flex-direction: column;
+}
+main .mainContent .allContents .cards .cardFigure{
+    padding: 10px;
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+    color: var(--textColor);
+    border-bottom: 1px solid var(--border);
+}
+main .mainContent .allContents .cards .cardTitle{
+    padding: 10px;
+    text-align: center;
+    font-size: small;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--bg);
+}
+
+/* ============ FORM ============= */
+main .mainContent .allContents form{
+    width: 530px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+main .mainContent .allContents form .formItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0;
+}
+main .mainContent .allContents form>img{
+    position: absolute;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+main .mainContent .allContents form .formItem>label{
+    flex: 1;
+    color: var(--textColor);
+}
+main .mainContent .allContents form .formItem>input,
+main .mainContent .allContents form .formItem>select{
+    flex: 1;
+    padding: 10px;
+    background-color: var(--bg);
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    color: var(--textColorSoft);
+}
+main .mainContent .allContents form .actionBtns{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+main .mainContent .allContents form .actionBtns>a,
+main .mainContent .allContents form .actionBtns>button{
+    border: none;
+    border-radius: 4px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+main .mainContent .allContents form .actionBtns>a{
+    background-color: var(--bg);
+    color: var(--textColor);
+}
+main .mainContent .allContents form .actionBtns>button{
+    font-size: 16px;
+}
+

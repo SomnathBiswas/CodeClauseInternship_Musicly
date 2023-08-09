@@ -1,0 +1,88 @@
+.login {
+  height: 100vh;
+  width: 100vw;
+  background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.login .logo a {
+  color: var(--logo);
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.login .logo a img {
+  width: 50px;
+  height: 50px;
+}
+.login form {
+  width: 400px;
+  background-color: var(--bgSoft);
+  color: var(--textColor);
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.login form .inputItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.login form .inputItem label {
+  font-size: 16px;
+  width: 150px;
+}
+.login form .inputItem input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--textColorSoft);
+  border: 1px solid var(--border);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login form a {
+  color: var(--textColorSoft);
+  margin-top: 10px;
+}
+.login form button {
+  border: none;
+  margin-top: 10px;
+  padding: 10px;
+  color: var(--textColor);
+  background: transparent;
+  border: 1px solid var(--border);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.login form button:hover {
+  background-color: var(--bg);
+}
+
+@media only screen and (max-width: 960px) {
+  /* CSS rules for tablets and smaller screens go here */
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  /* CSS rules for mobile devices go here */
+  .login form {
+    width: 300px;
+  }
+  .login form .inputItem label {
+    display: none;
+  }
+}

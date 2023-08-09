@@ -1,0 +1,577 @@
+body {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+/* =========== CREATE PLAYLIST MODAL ============= */
+.createPlaylistModal {
+  z-index: 1923;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+.createPlaylistModal i.fas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--textColor);
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+.createPlaylistModal div {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+}
+.createPlaylistModal div input {
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  color: var(--textColorSoft);
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.createPlaylistModal div button {
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  background: transparent;
+  color: var(--textColor);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.createPlaylistModal div button:hover {
+  background-color: var(--bg);
+}
+
+/* ============ CHOOSE PLAYLIST MODAL ============ */
+.choosePlaylistModal {
+  z-index: 1923;
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+}
+.choosePlaylistModal i.fas {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--textColor);
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+}
+.choosePlaylistModal div {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: var(--bgSoft);
+  padding: 20px;
+  border-radius: 10px;
+}
+.choosePlaylistModal div select {
+  padding: 10px;
+  font-size: 16px;
+  outline: none;
+  color: var(--textColor);
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+.choosePlaylistModal div button {
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  background: transparent;
+  color: var(--textColor);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.choosePlaylistModal div button:hover {
+  background-color: var(--bg);
+}
+
+/* ============= NAVBAR ==================== */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--textColor);
+  height: 70px;
+  border-bottom: 1px solid var(--border);
+}
+nav .logo a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: var(--logo);
+  font-size: 20px;
+}
+nav .logo a img {
+  width: 30px;
+  height: 30px;
+}
+nav .userAccount {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav .userAccount .accountIcon {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+nav .userAccount > a {
+  background-color: var(--textColorSoft);
+  color: var(--bg);
+  border-radius: 20px;
+  padding: 10px 20px;
+}
+
+/* ============= MAIN WINDOW ================ */
+main {
+  height: calc(100vh - 200px);
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  background-color: var(--bg);
+}
+
+/* ============= SIDE BAR =================== */
+main .sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+}
+main .sidebar .sidebarHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: var(--bgSoft);
+}
+main .sidebar .sidebarHeader .headerItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  font-size: 20px;
+  color: var(--textColorSoft);
+  transition: 0.3s ease;
+}
+main .sidebar .sidebarHeader a.active {
+  font-weight: bold;
+  color: var(--textColor);
+}
+main .sidebar .sidebarHeader .headerItem:hover {
+  color: var(--textColor);
+}
+main .sidebar .sidebarHeader .headerItem i {
+  width: 30px;
+}
+
+main .sidebar .playlist {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--bgSoft);
+}
+main .sidebar .playlist .playlistHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  color: var(--textColorSoft);
+  border-bottom: 1px solid var(--border);
+}
+main .sidebar .playlist .playlistHeader .headerItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+main .sidebar .playlist .playlistHeader .headerItem #createPlaylistBtn {
+  cursor: pointer;
+  color: var(--textColorSoft);
+  transition: 0.3s ease;
+}
+
+main .sidebar .playlist .playlistItems {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  overflow-y: auto;
+}
+main .sidebar .playlist .playlistItems a.playlistItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--textColorSoft);
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+main .sidebar .playlist .playlistItems a.active {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+main .sidebar .playlist .playlistItems a > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  user-select: none;
+}
+
+/* ============== MAIN CONTENT =============== */
+main #content {
+  flex: 1;
+  height: 100%;
+  background-color: var(--bgSoft);
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+main #content .contentItem {
+  display: none;
+}
+main #content .contentItem.active {
+  display: block;
+}
+
+/* ============= SEARCH CONTENT ============== */
+.contentItem .searchContentHeader {
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 20px;
+  display: flex;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--bgSoft);
+  z-index: 999;
+}
+
+.contentItem .searchContentHeader > input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--textColorSoft);
+}
+.contentItem .searchContentResult {
+  padding: 10px;
+}
+.contentItem .searchContentResult > .searchResultItem {
+  width: 200px;
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.contentItem .searchContentResult > .searchResultItem:hover {
+  background-color: var(--bg);
+}
+.contentItem .searchContentResult > .searchResultItem > img {
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.contentItem .searchContentResult > .searchResultItem .searchDetails {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.contentItem
+  .searchContentResult
+  > .searchResultItem
+  .searchDetails
+  > .heading {
+  color: var(--textColor);
+  word-wrap: break-word;
+}
+.contentItem
+  .searchContentResult
+  > .searchResultItem
+  .searchDetails
+  > .subHeading {
+  color: var(--textColorSoft);
+  font-size: small;
+  word-wrap: break-word;
+}
+
+.contentItem .noSearchResult {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--textColorSoft);
+}
+
+/* ============ PLAYLIST CONTENT ============ */
+
+.contentItem .playlistContentHeader {
+  background-color: var(--logo);
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+  position: relative;
+}
+.contentItem .playlistContentHeader > button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-size: 20px;
+  color: var(--textColorSoft);
+  padding: 10px;
+}
+.contentItem .playlistContentHeader > button:hover {
+  color: red;
+}
+.contentItem .playlistContentHeader > img {
+  width: 200px;
+  height: 200px;
+}
+.contentItem .playlistContentHeader > .playlistDetails {
+  color: var(--textColor);
+}
+.contentItem .playlistContentItems {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+.contentItem .playlistContentItems .songListItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  border-bottom: 1px solid var(--border);
+  padding: 10px;
+  color: var(--textColor);
+}
+.contentItem .playlistContentItems .songListItem i {
+  cursor: pointer;
+  user-select: none;
+}
+.contentItem .playlistContentItems .songListItem .songDetails {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contentItem .playlistContentItems .songListItem .songDetails > img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+.contentItem .playlistContentItems .songListItem .songDetails > .songTitle {
+  font-weight: bold;
+}
+.contentItem .playlistContentItems .songListItem .songDetails > .albumTitle {
+  font-size: small;
+}
+.contentItem .playlistContentItems .songListItem .actionBtns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.contentItem .playlistContentItems .songListItem .actionBtns a.fa-trash-alt {
+  color: red;
+}
+
+/* ================= PLAYER ================= */
+.player {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: var(--bg);
+  color: var(--textColor);
+  border-top: 1px solid var(--border);
+}
+.player .trackDetails {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.player .trackDetails img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.player .trackDetails .title {
+  display: flex;
+  flex-direction: column;
+}
+.player .trackDetails > i {
+  margin-left: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.player .trackDetails > i.fav {
+  color: red;
+}
+.player .playerControls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.player .playerControls .playerBtns {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+.player .playerControls .playerBtns i {
+  cursor: pointer;
+  margin: 0 10px;
+}
+.player .playerControls .trackSeeker {
+  width: 600px;
+  position: relative;
+}
+.player .playerControls .trackSeeker #seeker {
+  width: 100%;
+}
+.player .playerControls .trackSeeker .currTrackTime {
+  font-size: small;
+  position: absolute;
+  top: -25px;
+  left: 0;
+}
+.player .playerControls .trackSeeker .currTrackTotalTime {
+  font-size: small;
+  position: absolute;
+  top: -25px;
+  right: 0;
+}
+
+.player .playerVolume {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--textColor);
+}
+.player .playerVolume i {
+  cursor: pointer;
+}
+
+/* ============================================================= */
+@media only screen and (max-width: 960px) {
+  /* CSS rules for tablets and smaller screens go here */
+  main .sidebar {
+    width: 250px;
+  }
+  .player .trackDetails > img {
+    width: 50px;
+    height: 50px;
+  }
+  .player .playerVolume {
+    display: none;
+  }
+  .player .playerControls .trackSeeker {
+    width: 400px;
+  }
+}
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 480px) {
+  /* CSS rules for mobile devices go here */
+  nav .userAccount .accountIcon {
+    display: none;
+  }
+  main .sidebar {
+    width: 60px;
+  }
+  main .sidebar .sidebarHeader .headerItem {
+    overflow: hidden;
+  }
+  main .sidebar .playlist .playlistHeader .headerItem > i.fa-list {
+    display: none;
+  }
+  main .sidebar .playlist .playlistHeader .headerItem > span {
+    display: none;
+  }
+  main .sidebar .playlist .playlistItems a.playlistItem {
+    padding: 0;
+  }
+  main .sidebar .playlist .playlistItems a {
+    overflow: hidden;
+  }
+
+  .contentItem .playlistContentHeader {
+    flex-direction: column;
+  }
+  .contentItem .playlistContentHeader > img {
+    width: 60px;
+    height: 60px;
+  }
+  .contentItem .playlistContentHeader > .playlistDetails {
+    font-size: 10px;
+  }
+  .contentItem .playlistContentItems .songListItem .songDetails > img {
+    display: none;
+  }
+  .contentItem .playlistContentItems .songListItem .songDetails > .albumTitle {
+    display: none;
+  }
+
+  .player {
+    flex-direction: column;
+    align-items: center;
+  }
+  .player .trackDetails {
+    position: relative;
+  }
+  .player .trackDetails > img {
+    display: none;
+  }
+  .player .trackDetails > .title {
+    display: none;
+  }
+  .player .trackDetails > i.far {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+  .player .playerControls .trackSeeker {
+    width: 300px;
+  }
+  .player .playerVolume {
+    display: none;
+  }
+}
